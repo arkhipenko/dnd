@@ -1,0 +1,13 @@
+{
+  "ssid"           : "your wifi SSID",
+  "pwd"            : "your wifi passwrod",
+  "cfg_url"        : "http://ota.home.lan/esp/config/",
+  "blynk_host"     : "your blynk server URL",
+  "blynk_port"     : "8080",
+  "blynk_auth"     : "your blynk auth uuid",
+  "ota_host"       : "ota.home.lan",
+  "ota_port"       : "80",
+  "ota_url"        : "/esp/esp32.php",
+  "msg"            : "...",
+  "devices"        : "8"
+}
