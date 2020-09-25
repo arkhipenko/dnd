@@ -1,0 +1,3 @@
+I have not tried this, but maybe you can create a stub project and then repalce the definition with a (modified) content of this file and see if the app pops up automagically.
+This is given that you are running your own server of course...
+Good luck!

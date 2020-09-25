@@ -155,7 +155,7 @@ void blinkOD() {
 
 
 bool clockOE() {
-  MD_Parola& P = *P_ptr;
+//  MD_Parola& P = *P_ptr;
   Dictionary& pd = *pd_ptr;
 
   msg_backup = pd["msg"];
@@ -183,7 +183,7 @@ void clockOD() {
 void clockCB() {
   char buf[16];
   Dictionary& pd = *pd_ptr;
-  MD_Parola& P = *P_ptr;
+//  MD_Parola& P = *P_ptr;
 
   if ( tClock.getRunCounter() & 1 ) {
     sprintf( buf, "%02d:%02d:%02d ", hour(), minute(), second() );

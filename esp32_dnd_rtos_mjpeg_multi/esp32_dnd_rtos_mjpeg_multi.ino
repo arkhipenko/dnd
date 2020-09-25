@@ -88,16 +88,16 @@
 #include "camera_pins.h"
 
 /*
-Next one is an include with wifi credentials.
-This is what you need to do:
+  Next one is an include with wifi credentials.
+  This is what you need to do:
 
-1. Create a file called "home_wifi_multi.h" in the same folder   OR   under a separate subfolder of the "libraries" folder of Arduino IDE. (You are creating a "fake" library really - I called it "MySettings"). 
-2. Place the following text in the file:
-#define SSID1 "replace with your wifi ssid"
-#define PWD1 "replace your wifi password"
-3. Save.
+  1. Create a file called "home_wifi_multi.h" in the same folder   OR   under a separate subfolder of the "libraries" folder of Arduino IDE. (You are creating a "fake" library really - I called it "MySettings").
+  2. Place the following text in the file:
+  #define SSID1 "replace with your wifi ssid"
+  #define PWD1 "replace your wifi password"
+  3. Save.
 
-Should work then
+  Should work then
 */
 #include "home_wifi_multi.h"
 
@@ -143,7 +143,10 @@ void setup() {
   createCoreTasks();
 }
 
-void loop() {}
+void loop() {
+  // this seems to be necessary to let IDLE task run and do GC
+  vTaskDelay(1000);
+}
 
 void setupPins() {
   pinMode(LEDPIN, OUTPUT);

@@ -48,7 +48,8 @@ void mjpegCB(void* pvParameters) {
     NULL, //(void*) handler,
     2,
     &tStream,
-    APP_CPU);
+//    APP_CPU);
+    PRO_CPU);
 
   server.on("/mjpeg/1", HTTP_GET, handleJPGSstream);
   server.on("/jpg", HTTP_GET, handleJPG);
@@ -96,13 +97,14 @@ void camCB(void* pvParameters) {
 
     xSemaphoreTake( frameSync, portMAX_DELAY );
 
-    taskENTER_CRITICAL(&xSemaphore);
+    portENTER_CRITICAL(&xSemaphore);
 
     camBuf = fbs[ifb];
     camSize = s;
-    ifb = (++ifb) & 1;
+    ifb++;
+    ifb &= 1;
 
-    taskEXIT_CRITICAL(&xSemaphore);
+    portEXIT_CRITICAL(&xSemaphore);
 
     xSemaphoreGive( frameSync );
 
